@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: dotnetnxt
-          image: prdctmntc.azurecr.io/davisimage:#{Release.Artifacts.davisimage.BuildId}#
+          image: prdctmntc.azurecr.io/davisimage:#{Release.Artifacts.builds.BuildId}#
          
           imagePullPolicy: Always
 

@@ -22,8 +22,8 @@ spec:
           imagePullPolicy: Always
 
           ports:
-            - containerPort: 5000
-            - containerPort: 5001
+            - containerPort: 7050
+            - containerPort: 7050
       imagePullSecrets:
         - name: prdctmntc
 --- 
@@ -37,8 +37,8 @@ spec:
   type: LoadBalancer
   ports:
     - name: http5
-      port: 5000
+      port: 7050
     - name: http51
-      port: 5001
+      port: 7050
   selector:
     app: dotnetnxt

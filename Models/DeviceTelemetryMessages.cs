@@ -16,24 +16,19 @@ namespace IoTDevices.Models
         static string connectionString = "HostName=NxTIoTTraining.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=RlHaCMxWGXDfNA+0BPe7b8WPjOnS+7B7EUAfBQSMOzg=";
         static RegistryManager registryManager= RegistryManager.CreateFromConnectionString(connectionString);
         static DeviceClient Client = null;
-        static string deviceConnectionString= "HostName=NxTIoTTraining.azure-devices.net;DeviceId=AS_IoTDevice;SharedAccessKey=lWOyxF3wJ6qz7ng8kllZ84EByjBbCnVD8XpatqIo2s8=";
+        static string deviceConnectionString= "HostName=NxTIoTTraining.azure-devices.net;DeviceId=davisdt;SharedAccessKey=7rN3Zev33PXuHSBUvpir6e6uRL2oPbtH75Q2MPInzUM=";
 
         public static async Task SendDeviceToCloudMessagesAsync(string deviceName)
         {
             try  
             {  
-                //double minTemperature = 20;  
-                //double minHumidity = 60;  
-                //Random rand = new Random();  
                 Client=DeviceClient.CreateFromConnectionString(deviceConnectionString,Microsoft.Azure.Devices.Client.TransportType.Mqtt);
                 var device= await registryManager.GetTwinAsync(deviceName);
                 ReportedProperties properties= new ReportedProperties();
                 TwinCollection reportedproperties;
                 reportedproperties=device.Properties.Reported;
                 while (true)  
-                {  
-                    //double currentTemperature = minTemperature + rand.NextDouble() * 15;  
-                    //double currentHumidity = minHumidity + rand.NextDouble() * 20;    
+                {   
                     var telemetryDataPoint = new
                     {
                         temperature=reportedproperties["temperature"],

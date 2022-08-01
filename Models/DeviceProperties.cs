@@ -14,7 +14,7 @@ namespace IoTDevices.Models
         static string connectionString = "HostName=NxTIoTTraining.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=RlHaCMxWGXDfNA+0BPe7b8WPjOnS+7B7EUAfBQSMOzg=";
         static RegistryManager registryManager= RegistryManager.CreateFromConnectionString(connectionString);
         static DeviceClient Client = null;
-        static string DeviceConnectionString= "HostName=NxTIoTTraining.azure-devices.net;DeviceId=AS_IoTDevice;SharedAccessKey=lWOyxF3wJ6qz7ng8kllZ84EByjBbCnVD8XpatqIo2s8=";
+        static string DeviceConnectionString= "HostName=NxTIoTTraining.azure-devices.net;DeviceId=davisdt;SharedAccessKey=7rN3Zev33PXuHSBUvpir6e6uRL2oPbtH75Q2MPInzUM=";
 
         public static async Task UpdateReportedProperties(string deviceName,ReportedProperties properties)
         {
